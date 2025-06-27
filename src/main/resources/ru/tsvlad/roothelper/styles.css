@@ -1,0 +1,53 @@
+.root {
+    -fx-font-family: 'Arial';
+}
+
+.step-description {
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+    -fx-padding: 40px;
+    -fx-text-alignment: center;
+}
+
+.turn-counter {
+    -fx-font-weight: bold;
+    -fx-padding: 15px;
+}
+
+/* Добавим стили для выравнивания текста */
+.faction-name {
+    -fx-font-weight: bold;
+    -fx-padding: 15px;
+    -fx-font-size: 26px; /* Увеличим немного */
+}
+
+.stage-name {
+    -fx-padding: 15px;
+    -fx-font-size: 24px; /* Увеличим немного */
+    -fx-font-weight: bold; /* Сделаем полужирным */
+}
+
+.step-counter {
+    -fx-padding: 15px;
+    -fx-font-size: 22px;
+}
+
+/* Увеличим отступы между элементами */
+.top-center-panel > * {
+    -fx-padding: 8px 0;
+}
+
+.btn {
+    -fx-background-radius: 20px;
+}
+
+.btn-success {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.btn-secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+}
