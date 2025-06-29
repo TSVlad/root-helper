@@ -2,10 +2,13 @@ package ru.tsvlad.roothelper.view
 
 import javafx.application.Application
 import javafx.beans.binding.Bindings
+import javafx.collections.FXCollections
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.Scene
+import javafx.scene.control.Alert
 import javafx.scene.control.Button
+import javafx.scene.control.CheckBox
 import javafx.scene.control.Label
 import javafx.scene.control.ScrollPane
 import javafx.scene.image.Image
@@ -19,6 +22,8 @@ import javafx.scene.text.Text
 import javafx.scene.text.TextAlignment
 import javafx.stage.Stage
 import ru.tsvlad.roothelper.config.ConfigLoader
+import ru.tsvlad.roothelper.config.FractionConfig
+import ru.tsvlad.roothelper.config.GameConfig
 import ru.tsvlad.roothelper.controller.GameController
 import java.io.InputStream
 
@@ -39,6 +44,8 @@ class GameView : Application() {
     private lateinit var nextButton: Button
     private lateinit var descriptionContainer: StackPane
     private lateinit var descriptionScroll: ScrollPane
+    private lateinit var config: GameConfig
+    private val selectedFactions = FXCollections.observableArrayList<FractionConfig>()
 
     override fun start(stage: Stage) {
         primaryStage = stage
@@ -46,8 +53,86 @@ class GameView : Application() {
         val configStream: InputStream = javaClass.getResourceAsStream(
             "/ru/tsvlad/roothelper/config.json"
         ) ?: throw IllegalStateException("Config file not found")
-        val config = ConfigLoader.loadConfig(configStream)
-        controller = GameController(config)
+        config = ConfigLoader.loadConfig(configStream)
+
+        // Показываем стартовый экран
+        showStartScreen()
+    }
+
+    private fun showStartScreen() {
+        val root = VBox(20.0)
+        root.alignment = Pos.CENTER
+        root.padding = Insets(40.0)
+
+        val title = Label("Выберите фракции для игры")
+        title.style = "-fx-font-size: 32px; -fx-font-weight: bold;"
+
+        val factionsGrid = GridPane()
+        factionsGrid.alignment = Pos.CENTER
+        factionsGrid.hgap = 20.0
+        factionsGrid.vgap = 20.0
+        factionsGrid.padding = Insets(20.0)
+
+        // Создаем чекбоксы для выбора фракций
+        val factionCheckboxes = mutableListOf<CheckBox>()
+
+        config.fractions.forEachIndexed { index, faction ->
+            val factionBox = VBox(10.0)
+            factionBox.alignment = Pos.CENTER
+
+            val imageView = ImageView(loadImage(faction.icon)).apply {
+                fitHeight = 120.0
+                fitWidth = 120.0
+                isPreserveRatio = true
+            }
+
+            val label = Label(faction.name).apply {
+                style = "-fx-font-size: 18px;"
+            }
+
+            val checkbox = CheckBox().apply {
+                isSelected = true
+                selectedFactions.add(faction)
+                selectedProperty().addListener { _, _, isSelected ->
+                    if (isSelected) {
+                        selectedFactions.add(faction)
+                    } else {
+                        selectedFactions.remove(faction)
+                    }
+                }
+            }
+
+            factionBox.children.addAll(imageView, label, checkbox)
+            factionCheckboxes.add(checkbox)
+
+            factionsGrid.add(factionBox, index % 3, index / 3)
+        }
+
+        val startButton = Button("Начать игру").apply {
+            style = "-fx-font-size: 24px; -fx-padding: 15px 40px;"
+            setOnAction {
+                if (selectedFactions.isEmpty()) {
+                    Alert(Alert.AlertType.WARNING, "Выберите хотя бы одну фракцию").show()
+                } else {
+                    startGame()
+                }
+            }
+        }
+
+        root.children.addAll(title, factionsGrid, startButton)
+
+        val scene = Scene(root, 1200.0, 800.0)
+        primaryStage.title = "Root Game Helper - Выбор фракций"
+        primaryStage.scene = scene
+        primaryStage.show()
+    }
+
+    private fun startGame() {
+        // СОХРАНЯЕМ ПОРЯДОК ФРАКЦИЙ ИЗ КОНФИГА
+        val orderedSelectedFactions = config.fractions.filter { selectedFactions.contains(it) }
+
+        // Создаем контроллер с выбранными фракциями (в правильном порядке)
+        controller = GameController(GameConfig(orderedSelectedFactions, config.maxHistorySize))
 
         // Создание UI элементов
         createUIElements()
@@ -90,7 +175,6 @@ class GameView : Application() {
         // Добавляем слушатели для автоматического изменения размера текста
         setupAutoResizeText()
 
-        primaryStage.show()
         updateUI()
 
         // Установка фокуса для обработки клавиатуры
