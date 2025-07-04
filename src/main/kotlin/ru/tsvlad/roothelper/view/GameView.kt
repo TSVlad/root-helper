@@ -63,15 +63,17 @@ class GameView : Application() {
         val root = VBox(20.0)
         root.alignment = Pos.CENTER
         root.padding = Insets(40.0)
+        root.styleClass.add("start-screen") // Добавляем класс для корневого элемента
 
         val title = Label("Выберите фракции для игры")
-        title.style = "-fx-font-size: 32px; -fx-font-weight: bold;"
+        title.styleClass.add("start-title") // Добавляем класс для заголовка
 
         val factionsGrid = GridPane()
         factionsGrid.alignment = Pos.CENTER
         factionsGrid.hgap = 20.0
         factionsGrid.vgap = 20.0
         factionsGrid.padding = Insets(20.0)
+        factionsGrid.styleClass.add("factions-grid") // Добавляем класс для сетки фракций
 
         // Создаем чекбоксы для выбора фракций
         val factionCheckboxes = mutableListOf<CheckBox>()
@@ -79,6 +81,7 @@ class GameView : Application() {
         config.fractions.forEachIndexed { index, faction ->
             val factionBox = VBox(10.0)
             factionBox.alignment = Pos.CENTER
+            factionBox.styleClass.add("faction-box") // Добавляем класс для блока фракции
 
             val imageView = ImageView(loadImage(faction.icon)).apply {
                 fitHeight = 120.0
@@ -87,10 +90,11 @@ class GameView : Application() {
             }
 
             val label = Label(faction.name).apply {
-                style = "-fx-font-size: 18px;"
+                styleClass.add("faction-label") // Добавляем класс для названия фракции
             }
 
             val checkbox = CheckBox().apply {
+                styleClass.add("faction-checkbox") // Добавляем класс для чекбокса
                 isSelected = true
                 selectedFactions.add(faction)
                 selectedProperty().addListener { _, _, isSelected ->
@@ -109,19 +113,25 @@ class GameView : Application() {
         }
 
         val startButton = Button("Начать игру").apply {
-            style = "-fx-font-size: 24px; -fx-padding: 15px 40px;"
-            setOnAction {
-                if (selectedFactions.isEmpty()) {
-                    Alert(Alert.AlertType.WARNING, "Выберите хотя бы одну фракцию").show()
-                } else {
-                    startGame()
-                }
+            styleClass.addAll("btn", "btn-primary", "btn-start") // Классы стилей
+        }
+
+        // Обработчик для кнопки
+        startButton.setOnAction {
+            if (selectedFactions.isEmpty()) {
+                Alert(Alert.AlertType.WARNING, "Выберите хотя бы одну фракцию").show()
+            } else {
+                startGame()
             }
         }
 
         root.children.addAll(title, factionsGrid, startButton)
 
         val scene = Scene(root, 1200.0, 800.0)
+        scene.stylesheets.add(
+            javaClass.getResource("/ru/tsvlad/roothelper/styles.css")?.toExternalForm()
+        )
+
         primaryStage.title = "Root Game Helper - Выбор фракций"
         primaryStage.scene = scene
         primaryStage.show()
@@ -137,7 +147,6 @@ class GameView : Application() {
         // Создание UI элементов
         createUIElements()
 
-        // Создание макета
         createLayout()
 
         // Настройка сцены

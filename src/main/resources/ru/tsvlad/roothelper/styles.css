@@ -51,3 +51,34 @@
     -fx-background-color: #95a5a6;
     -fx-text-fill: white;
 }
+
+/* Новый стиль для синей кнопки */
+.btn-primary {
+    -fx-background-color: #3498db; /* Синий цвет */
+    -fx-text-fill: white;
+}
+
+/* Стили для кнопки "Начать игру" */
+.btn-start {
+    -fx-font-size: 24px;
+    -fx-padding: 15px 40px;
+    -fx-min-width: 250px;
+    -fx-min-height: 60px;
+    -fx-background-radius: 30px;
+}
+
+/* Эффект при наведении */
+.btn-primary:hover {
+    -fx-background-color: #2980b9; /* Темнее на 10% */
+    -fx-cursor: hand;
+}
+
+/* Эффект при нажатии */
+.btn-primary:pressed {
+    -fx-background-color: #1c6ea4; /* Еще темнее */
+}
+
+/* Анимация перехода цвета */
+.btn-primary {
+    -fx-transition: background-color 0.3s;
+}
