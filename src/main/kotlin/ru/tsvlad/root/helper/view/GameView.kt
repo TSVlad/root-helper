@@ -1,7 +1,6 @@
 package ru.tsvlad.root.helper.view
 
 import javafx.beans.binding.Bindings
-import javafx.collections.FXCollections
 import javafx.geometry.Pos
 import javafx.scene.Scene
 import javafx.scene.image.Image
