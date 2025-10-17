@@ -1,9 +1,9 @@
-package ru.tsvlad.roothelper.controller
+package ru.tsvlad.root.helper.controller
 
-import ru.tsvlad.roothelper.config.FractionConfig
-import ru.tsvlad.roothelper.config.GameConfig
-import ru.tsvlad.roothelper.config.StageConfig
-import ru.tsvlad.roothelper.config.StepConfig
+import ru.tsvlad.root.helper.config.FractionConfig
+import ru.tsvlad.root.helper.config.GameConfig
+import ru.tsvlad.root.helper.config.StageConfig
+import ru.tsvlad.root.helper.config.StepConfig
 
 class GameController(private val config: GameConfig) {
     private val factions = config.fractions

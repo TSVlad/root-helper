@@ -1,4 +1,4 @@
-package ru.tsvlad.roothelper.config
+package ru.tsvlad.root.helper.config
 
 import kotlinx.serialization.Serializable
 

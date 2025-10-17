@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "ru.tsvlad.roothelper"
+group = "ru.tsvlad.root.helper"
 version = "1.0.0"
 
 repositories {
@@ -27,5 +27,5 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 }
 
 application {
-    mainClass.set("ru.tsvlad.roothelper.MainKt")
+    mainClass.set("ru.tsvlad.root.helper.GameApp")
 }

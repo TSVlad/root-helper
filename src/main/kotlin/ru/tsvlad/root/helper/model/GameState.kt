@@ -1,4 +1,4 @@
-package ru.tsvlad.roothelper.model
+package ru.tsvlad.root.helper.model
 
 data class GameState(
     val factionIndex: Int,

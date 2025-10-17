@@ -1,5 +1,5 @@
 //@file:Suppress("JAVA_MODULE_DOES_NOT_DEPEND_ON_MODULE")
-package ru.tsvlad.roothelper.config
+package ru.tsvlad.root.helper.config
 
 import kotlinx.serialization.json.Json
 import java.io.InputStream
