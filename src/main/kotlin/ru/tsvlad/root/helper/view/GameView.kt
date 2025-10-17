@@ -4,8 +4,6 @@ import javafx.beans.binding.Bindings
 import javafx.geometry.Pos
 import javafx.scene.Scene
 import javafx.scene.image.Image
-import javafx.scene.input.KeyCode
-import javafx.scene.input.KeyEvent
 import javafx.scene.text.Font
 import javafx.scene.text.FontWeight
 import javafx.scene.text.Text
@@ -54,25 +52,6 @@ class GameView {
 
         // Создание макета после инициализации сцены
         createLayout()
-
-        // Обработка горячих клавиш
-        scene.addEventHandler(KeyEvent.KEY_PRESSED) { event ->
-            when (event.code) {
-                KeyCode.F11 -> {
-                    primaryStage.isFullScreen = !primaryStage.isFullScreen
-                    event.consume()
-                }
-                KeyCode.RIGHT, KeyCode.D -> {
-                    updateState(true)
-                    event.consume()
-                }
-                KeyCode.LEFT, KeyCode.A -> {
-                    updateState(false)
-                    event.consume()
-                }
-                else -> {}
-            }
-        }
 
         primaryStage.title = "Root Game Helper"
         primaryStage.scene = scene
