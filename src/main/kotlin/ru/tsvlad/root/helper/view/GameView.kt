@@ -23,7 +23,6 @@ class GameView {
     private lateinit var primaryStage: Stage
     private lateinit var scene: Scene
     private lateinit var config: GameConfig
-    private val selectedFactions = FXCollections.observableArrayList<FractionConfig>()
     private val gameLayout = GameLayout()
     private val gameControls: GameControls
         get() = GameControls(primaryStage, scene, gameLayout.prevButton, gameLayout.nextButton, gameLayout.turnCounter, gameLayout.factionNameLabel, gameLayout.stageNameLabel, gameLayout.stepCounterLabel)
