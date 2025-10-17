@@ -89,7 +89,13 @@ class GameView {
         updateUI()
 
         // Установка фокуса для обработки клавиатуры
+        gameLayout.root.isFocusTraversable = true
         gameLayout.root.requestFocus()
+
+        // Восстановление фокуса при клике по сцене
+        gameLayout.root.setOnMouseClicked {
+            gameLayout.root.requestFocus()
+        }
     }
     private fun createUIElements() {
         // Создаем ImageView без фиксированных размеров
