@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    kotlin("jvm") version "1.9.0"
-    id("org.openjfx.javafxplugin") version "0.0.13"
-    kotlin("plugin.serialization") version "1.9.0"
+    kotlin("jvm") version "2.2.10"
+    id("org.openjfx.javafxplugin") version "0.1.0"
+    kotlin("plugin.serialization") version "2.2.10"
     application
 }
 
@@ -14,16 +16,18 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-    implementation("org.openjfx:javafx-controls:17.0.7")
+    implementation("org.openjfx:javafx-controls:21.0.9")
 }
 
 javafx {
-    version = "17"
+    version = "21"
     modules("javafx.controls", "javafx.graphics")
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
+    }
 }
 
 application {
