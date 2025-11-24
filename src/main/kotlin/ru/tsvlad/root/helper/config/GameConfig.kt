@@ -4,14 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class StepConfig(
-    val description: String
-)
-
-@Serializable
-data class StageConfig(
-    val name: String,
-    val icon: String,
-    val steps: List<StepConfig>
+    val picture: String
 )
 
 @Serializable
@@ -20,7 +13,7 @@ data class FractionConfig(
     val name: String,
     val icon: String,
     val color: String,
-    val stages: List<StageConfig>
+    val steps: List<StepConfig>
 )
 
 @Serializable
