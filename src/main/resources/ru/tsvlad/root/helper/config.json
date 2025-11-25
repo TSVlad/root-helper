@@ -54,6 +54,49 @@
         {"picture": "enot_evening_2.png"},
         {"picture": "enot_evening_3.png"}
       ]
+    },
+    {
+      "id": "enot2",
+      "name": "Бродяга 2",
+      "icon": "enot.png",
+      "color": "#8a8a8a",
+      "steps": [
+        {"picture": "enot_morning_1.png"},
+        {"picture": "enot_morning_2.png"},
+        {"picture": "enot_afternoon_1.png"},
+        {"picture": "enot_evening_1.png"},
+        {"picture": "enot_evening_2.png"},
+        {"picture": "enot_evening_3.png"}
+      ]
+    },
+    {
+      "id": "lizards",
+      "name": "Культ пресмыкающихся",
+      "icon": "lizards.png",
+      "color": "#c6e309",
+      "steps": [
+        {"picture": "lizards_morning_1.png"},
+        {"picture": "lizards_morning_2.png"},
+        {"picture": "lizards_morning_3.png"},
+        {"picture": "lizards_afternoon_1.png"},
+        {"picture": "lizards_evening_1.png"},
+        {"picture": "lizards_evening_2.png"},
+        {"picture": "lizards_evening_3.png"}
+      ]
+    },
+    {
+      "id": "beavers",
+      "name": "Речное братство",
+      "icon": "beavers.png",
+      "color": "#09d4e3",
+      "steps": [
+        {"picture": "beavers_morning_1.png"},
+        {"picture": "beavers_morning_2.png"},
+        {"picture": "beavers_morning_3.png"},
+        {"picture": "beavers_afternoon_1.png"},
+        {"picture": "beavers_evening_1.png"},
+        {"picture": "beavers_evening_2.png"}
+      ]
     }
   ]
 }
