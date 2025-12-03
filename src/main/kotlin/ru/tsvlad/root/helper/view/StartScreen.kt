@@ -40,6 +40,7 @@ class StartScreen(
 
         // Создаем чекбоксы для выбора фракций
         val factionCheckboxes = mutableListOf<CheckBox>()
+        val factionLabels = mutableMapOf<FractionConfig, Label>()
 
         gameConfig.fractions.forEachIndexed { index, faction ->
             val factionBox = VBox(10.0)
@@ -55,6 +56,7 @@ class StartScreen(
             val label = Label(faction.name).apply {
                 styleClass.add("faction-label")
             }
+            factionLabels[faction] = label
 
             val checkbox = CheckBox().apply {
                 styleClass.add("faction-checkbox")
@@ -66,6 +68,7 @@ class StartScreen(
                     } else {
                         selectedFactions.remove(faction)
                     }
+                    updateFactionLabels(factionLabels, selectedFactions)
                 }
             }
 
@@ -74,6 +77,9 @@ class StartScreen(
 
             factionsGrid.add(factionBox, index % 3, index / 3)
         }
+
+        // Обновляем метки после создания всех элементов
+        updateFactionLabels(factionLabels, selectedFactions)
 
         val startButton = Button("Начать игру").apply {
             styleClass.addAll("btn", "btn-primary", "btn-start")
@@ -104,5 +110,22 @@ class StartScreen(
         val resource = javaClass.getResource("/images/$path")
             ?: throw RuntimeException("Resource not found: $path")
         return Image(resource.toExternalForm())
+    }
+
+    private fun updateFactionLabels(
+        factionLabels: Map<FractionConfig, Label>,
+        selectedFactions: List<FractionConfig>
+    ) {
+        gameConfig.fractions.forEach { faction ->
+            val label = factionLabels[faction] ?: return@forEach
+            val indexInSelected = selectedFactions.indexOf(faction)
+            if (indexInSelected >= 0) {
+                // Фракция выбрана - показываем номер
+                label.text = "${indexInSelected + 1}. ${faction.name}"
+            } else {
+                // Фракция не выбрана - показываем только название
+                label.text = faction.name
+            }
+        }
     }
 }
