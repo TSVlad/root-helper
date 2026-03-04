@@ -4,127 +4,127 @@
     {
       "id": "cats",
       "name": "Маркиса де Коте",
-      "icon": "cats.png",
+      "icon": "cats/cats.png",
       "color": "#FF9800",
       "steps": [
-        {"picture": "cat_morning_1.png"},
-        {"picture": "cat_afternoon_1.png"},
-        {"picture": "cat_afternoon_2.png"},
-        {"picture": "cat_evening_1.png"}
+        {"picture": "cats/cat_morning_1.png"},
+        {"picture": "cats/cat_afternoon_1.png"},
+        {"picture": "cats/cat_afternoon_2.png"},
+        {"picture": "cats/cat_evening_1.png"}
       ]
     },
     {
       "id": "birds",
       "name": "Крылатая династия",
-      "icon": "birds.png",
+      "icon": "birds/birds.png",
       "color": "#2196F3",
       "steps": [
-        {"picture": "birds_morning_1.png"},
-        {"picture": "birds_morning_2.png"},
-        {"picture": "birds_morning_3.png"},
-        {"picture": "birds_afternoon_1.png"},
-        {"picture": "birds_afternoon_2.png"},
-        {"picture": "birds_evening_1.png"},
-        {"picture": "birds_evening_2.png"}
+        {"picture": "birds/birds_morning_1.png"},
+        {"picture": "birds/birds_morning_2.png"},
+        {"picture": "birds/birds_morning_3.png"},
+        {"picture": "birds/birds_afternoon_1.png"},
+        {"picture": "birds/birds_afternoon_2.png"},
+        {"picture": "birds/birds_evening_1.png"},
+        {"picture": "birds/birds_evening_2.png"}
       ]
     },
     {
       "id": "mouses",
       "name": "Лесной союз",
-      "icon": "mouses.png",
+      "icon": "mouses/mouses.png",
       "color": "#4fc45a",
       "steps": [
-        {"picture": "mouses_morning_1.png"},
-        {"picture": "mouses_morning_2.png"},
-        {"picture": "mouses_afternoon_1.png"},
-        {"picture": "mouses_evening_1.png"},
-        {"picture": "mouses_evening_2.png"}
+        {"picture": "mouses/mouses_morning_1.png"},
+        {"picture": "mouses/mouses_morning_2.png"},
+        {"picture": "mouses/mouses_afternoon_1.png"},
+        {"picture": "mouses/mouses_evening_1.png"},
+        {"picture": "mouses/mouses_evening_2.png"}
       ]
     },
     {
       "id": "enot",
       "name": "Бродяга",
-      "icon": "enot.png",
+      "icon": "enot/enot.png",
       "color": "#8a8a8a",
       "steps": [
-        {"picture": "enot_morning_1.png"},
-        {"picture": "enot_morning_2.png"},
-        {"picture": "enot_afternoon_1.png"},
-        {"picture": "enot_evening_1.png"},
-        {"picture": "enot_evening_2.png"},
-        {"picture": "enot_evening_3.png"}
+        {"picture": "enot/enot_morning_1.png"},
+        {"picture": "enot/enot_morning_2.png"},
+        {"picture": "enot/enot_afternoon_1.png"},
+        {"picture": "enot/enot_evening_1.png"},
+        {"picture": "enot/enot_evening_2.png"},
+        {"picture": "enot/enot_evening_3.png"}
       ]
     },
     {
       "id": "enot2",
       "name": "Бродяга 2",
-      "icon": "enot.png",
+      "icon": "enot/enot.png",
       "color": "#8a8a8a",
       "steps": [
-        {"picture": "enot_morning_1.png"},
-        {"picture": "enot_morning_2.png"},
-        {"picture": "enot_afternoon_1.png"},
-        {"picture": "enot_evening_1.png"},
-        {"picture": "enot_evening_2.png"},
-        {"picture": "enot_evening_3.png"}
+        {"picture": "enot/enot_morning_1.png"},
+        {"picture": "enot/enot_morning_2.png"},
+        {"picture": "enot/enot_afternoon_1.png"},
+        {"picture": "enot/enot_evening_1.png"},
+        {"picture": "enot/enot_evening_2.png"},
+        {"picture": "enot/enot_evening_3.png"}
       ]
     },
     {
       "id": "lizards",
       "name": "Культ пресмыкающихся",
-      "icon": "lizards.png",
+      "icon": "lizards/lizards.png",
       "color": "#c6e309",
       "steps": [
-        {"picture": "lizards_morning_1.png"},
-        {"picture": "lizards_morning_2.png"},
-        {"picture": "lizards_morning_3.png"},
-        {"picture": "lizards_afternoon_1.png"},
-        {"picture": "lizards_evening_1.png"},
-        {"picture": "lizards_evening_2.png"},
-        {"picture": "lizards_evening_3.png"}
+        {"picture": "lizards/lizards_morning_1.png"},
+        {"picture": "lizards/lizards_morning_2.png"},
+        {"picture": "lizards/lizards_morning_3.png"},
+        {"picture": "lizards/lizards_afternoon_1.png"},
+        {"picture": "lizards/lizards_evening_1.png"},
+        {"picture": "lizards/lizards_evening_2.png"},
+        {"picture": "lizards/lizards_evening_3.png"}
       ]
     },
     {
       "id": "beavers",
       "name": "Речное братство",
-      "icon": "beavers.png",
+      "icon": "beavers/beavers.png",
       "color": "#09d4e3",
       "steps": [
-        {"picture": "beavers_morning_1.png"},
-        {"picture": "beavers_morning_2.png"},
-        {"picture": "beavers_morning_3.png"},
-        {"picture": "beavers_afternoon_1.png"},
-        {"picture": "beavers_evening_1.png"},
-        {"picture": "beavers_evening_2.png"}
+        {"picture": "beavers/beavers_morning_1.png"},
+        {"picture": "beavers/beavers_morning_2.png"},
+        {"picture": "beavers/beavers_morning_3.png"},
+        {"picture": "beavers/beavers_afternoon_1.png"},
+        {"picture": "beavers/beavers_evening_1.png"},
+        {"picture": "beavers/beavers_evening_2.png"}
       ]
     },
     {
       "id": "kroti",
       "name": "Подземное герцогство",
-      "icon": "kroti.png",
+      "icon": "kroti/kroti.png",
       "color": "#795548",
       "steps": [
-        {"picture": "kroti_morning_1.png"},
-        {"picture": "kroti_afternoon_1.png"},
-        {"picture": "kroti_afternoon_2.png"},
-        {"picture": "krotii_afternoon_3.png"},
-        {"picture": "krotii_evening_1.png"},
-        {"picture": "kroti_evening_2.png"},
-        {"picture": "kroti_evening_3.png"}
+        {"picture": "kroti/kroti_morning_1.png"},
+        {"picture": "kroti/kroti_afternoon_1.png"},
+        {"picture": "kroti/kroti_afternoon_2.png"},
+        {"picture": "kroti/krotii_afternoon_3.png"},
+        {"picture": "kroti/krotii_evening_1.png"},
+        {"picture": "kroti/kroti_evening_2.png"},
+        {"picture": "kroti/kroti_evening_3.png"}
       ]
     },
     {
       "id": "voroni",
       "name": "Вороний сговор",
-      "icon": "voroni.png",
+      "icon": "voroni/voroni.png",
       "color": "#7f00ff",
       "steps": [
-        {"picture": "voroni_morning_1.png"},
-        {"picture": "voroni_morning_2.png"},
-        {"picture": "voroni_morning_3.png"},
-        {"picture": "voroni_afternoon_1.png"},
-        {"picture": "voroni_evening_1.png"},
-        {"picture": "voroni_evening_2.png"}
+        {"picture": "voroni/voroni_morning_1.png"},
+        {"picture": "voroni/voroni_morning_2.png"},
+        {"picture": "voroni/voroni_morning_3.png"},
+        {"picture": "voroni/voroni_afternoon_1.png"},
+        {"picture": "voroni/voroni_evening_1.png"},
+        {"picture": "voroni/voroni_evening_2.png"}
       ]
     }
   ]

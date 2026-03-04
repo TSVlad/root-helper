@@ -124,7 +124,7 @@ class GameView {
         gameLayout.turnCounter.style = "-fx-text-fill: $textColor;"
     }
     private fun loadImage(path: String): Image {
-        val resource = javaClass.getResource("/images/$path")
+        val resource = javaClass.getResource("/ru/tsvlad/root/helper/images/$path")
             ?: throw RuntimeException("Resource not found: $path")
         return Image(resource.toExternalForm())
     }
