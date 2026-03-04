@@ -97,6 +97,35 @@
         {"picture": "beavers_evening_1.png"},
         {"picture": "beavers_evening_2.png"}
       ]
+    },
+    {
+      "id": "kroti",
+      "name": "Подземное герцогство",
+      "icon": "kroti.png",
+      "color": "#795548",
+      "steps": [
+        {"picture": "kroti_morning_1.png"},
+        {"picture": "kroti_afternoon_1.png"},
+        {"picture": "kroti_afternoon_2.png"},
+        {"picture": "krotii_afternoon_3.png"},
+        {"picture": "krotii_evening_1.png"},
+        {"picture": "kroti_evening_2.png"},
+        {"picture": "kroti_evening_3.png"}
+      ]
+    },
+    {
+      "id": "voroni",
+      "name": "Вороний сговор",
+      "icon": "voroni.png",
+      "color": "#7f00ff",
+      "steps": [
+        {"picture": "voroni_morning_1.png"},
+        {"picture": "voroni_morning_2.png"},
+        {"picture": "voroni_morning_3.png"},
+        {"picture": "voroni_afternoon_1.png"},
+        {"picture": "voroni_evening_1.png"},
+        {"picture": "voroni_evening_2.png"}
+      ]
     }
   ]
 }
